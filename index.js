@@ -14,6 +14,13 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Routes
+app.use('', router.get('', (req, res) => {
+    return res.send({
+        status: 200,
+        mensaje: 'API de turismo Ruta'
+    });
+}));
+
 app.use('/api', router);
 
 // Connection
