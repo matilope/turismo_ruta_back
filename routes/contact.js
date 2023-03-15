@@ -5,14 +5,7 @@ import rateLimit from "express-rate-limit";
 
 let router = express.Router();
 
-const limiter = rateLimit({
-    windowMs: 86400000, // 24 hours
-    max: 5, // Limit each IP
-    standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
-    legacyHeaders: false, // Disable the `X-RateLimit-*` headers
-});
-
-export default router.post("/formulario", limiter, (req, res) => {
+export default router.post("/formulario", (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'hotmail',
         auth: {
