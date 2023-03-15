@@ -1,0 +1,48 @@
+{
+    "version": 1,
+    "name": "turismo-ruta",
+    "builds": [
+       {
+          "src": "index.js",
+          "use": "@vercel/node"
+       }
+    ],
+    "routes": [
+       {
+          "src": "/(.*)",
+          "dest": "index.js",
+          "methods": [
+             "GET",
+             "POST",
+             "PUT",
+             "PATCH",
+             "OPTIONS",
+             "DELETE"
+           ],
+           "headers": {
+             "Access-Control-Allow-Origin": "*",
+             "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+             "Access-Control-Allow-Credentials": "true"
+           },
+           "continue": true
+       },
+       {
+          "src": "/api/formulario",
+          "dest": "index.js",
+          "methods": [
+             "GET",
+             "POST",
+             "PUT",
+             "PATCH",
+             "OPTIONS",
+             "DELETE"
+           ],
+           "headers": {
+             "Access-Control-Allow-Origin": "*",
+             "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+             "Access-Control-Allow-Credentials": "true"
+           },
+           "continue": true
+       }
+    ]
+ }
